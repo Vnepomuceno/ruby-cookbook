@@ -7,6 +7,8 @@
 - **Email Address**: valter.nep@gmail.com
 - **Reference Links**: [LinkedIn](https://pt.linkedin.com/in/valternepomuceno) | [GitHub](https://github.com/Vnepomuceno) | [Facebook](https://www.facebook.com/valter.nepomuceno)
 
+[Book Cover](https://covers.oreillystatic.com/images/9780596523695/lrg.jpg)
+
 ## Chapter 2 - Strings
 
 ### Recipe 2.9 Processing a String One Word at a Time
