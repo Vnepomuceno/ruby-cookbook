@@ -22,6 +22,8 @@ irb(main):001:0> require './string.rb'
 
 Problem: You want to split a piece of text into words, and operate on each word.
 
+Solution:
+
 ```rb
 irb(main):001:0> %{"The F.B.I. fella--he's quite the man-about-town."}.word_count
 => {"the"=>2, "f.b.i"=>1, "fella"=>1, "he's"=>1, "quite"=>1, "man-about-town"=>1}
@@ -31,6 +33,7 @@ irb(main):001:0> %{"The F.B.I. fella--he's quite the man-about-town."}.word_coun
 
 Problem: Your string is in the wrong case, or no particular case at all.
 
+Solution:
 ```rb
 irb(main):001:0> s = "i told Alice. She remembers now."
 => "i told Alice. She remembers now."
@@ -42,4 +45,26 @@ irb(main):004:0> s.capitalize_first_letter!
 => "I told Alice. She remembers now."
 irb(main):005:0> s
 => "I told Alice. She remembers now."
+```
+
+### Recipe 2.14 Word-Wrapping Lines of Text
+
+Problem: You want to turn a string full of miscellaneous whitespace into a string formatted with linebreaks at appropriate intervals, so that the text can be displayed in a window or sent as an email.
+
+Solution:
+```rb
+irb(main):001:0> puts wrap("This text is too short to be wrapped.", 20)
+This text is too
+short to be wrapped.
+=> nil
+```
+
+```rb
+irb(main):001:0> prose = %q{I find myself alone these days, more often than not, watching the rain run down nearby windows. How long has it been raining? The newspapers now print the total, but no one reads them anymore.}
+irb(main):002:0> puts reformat_wrapped(prose, 60) 
+I find myself alone these days, more often than not,
+watching the rain run down nearby windows. How long has it
+been raining? The newspapers now print the total, but no one
+reads them anymore.
+=> nil
 ```
