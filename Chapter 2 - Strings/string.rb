@@ -1,3 +1,5 @@
+require 'resolv'
+
 class String
   # Recipe 2.9 - Processing a String One Word at a Time
   def word_count
@@ -41,4 +43,22 @@ def reformat_wrapped(string, width=78)
   end
   lines << line if line
   lines.join("\n")
+end
+
+# Recipe 2.18 Validating an Email Address
+def probably_valid?(email)
+  # Commonly encountered email address characters
+  valid = '[A-Za-z\d.+-]+'
+  (email =~ /#{valid}@#{valid}\.#{valid}/) == 0
+end
+
+def valid_email_host?(email)
+  hostname = email[(email =~ /@/)+1..email.length]
+  valid = true
+  begin
+    Resolv::DNS.new.getresource(hostname, Resolv::DNS::Resource::IN::MX)
+  rescue Resolv::ResolvError
+    valid = false
+  end
+    return valid
 end

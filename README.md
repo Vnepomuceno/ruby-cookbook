@@ -1,12 +1,5 @@
 # Ruby Cookbook, by Lucas Carlson and Leonard Richardson
 
-- **Author**: Valter Nepomuceno
-- **When**: March, 2018
-- **Based in**: Lisbon, Portugal
-- **Current Job**: Software Developer
-- **Email Address**: valter.nep@gmail.com
-- **Reference Links**: [LinkedIn](https://pt.linkedin.com/in/valternepomuceno) | [GitHub](https://github.com/Vnepomuceno) | [Facebook](https://www.facebook.com/valter.nepomuceno)
-
 ![Book Cover](https://covers.oreillystatic.com/images/9780596523695/lrg.jpg)
 
 ## Chapter 2 - Strings
@@ -20,10 +13,9 @@ irb(main):001:0> require './string.rb'
 
 ### Recipe 2.9 Processing a String One Word at a Time
 
-Problem: You want to split a piece of text into words, and operate on each word.
+**Problem**: You want to split a piece of text into words, and operate on each word.
 
-Solution:
-
+**Solution**:
 ```rb
 irb(main):001:0> %{"The F.B.I. fella--he's quite the man-about-town."}.word_count
 => {"the"=>2, "f.b.i"=>1, "fella"=>1, "he's"=>1, "quite"=>1, "man-about-town"=>1}
@@ -31,9 +23,9 @@ irb(main):001:0> %{"The F.B.I. fella--he's quite the man-about-town."}.word_coun
 
 ### Recipe 2.10 Changing the Case of a String
 
-Problem: Your string is in the wrong case, or no particular case at all.
+**Problem**: Your string is in the wrong case, or no particular case at all.
 
-Solution:
+**Solution**:
 ```rb
 irb(main):001:0> s = "i told Alice. She remembers now."
 => "i told Alice. She remembers now."
@@ -49,9 +41,9 @@ irb(main):005:0> s
 
 ### Recipe 2.14 Word-Wrapping Lines of Text
 
-Problem: You want to turn a string full of miscellaneous whitespace into a string formatted with linebreaks at appropriate intervals, so that the text can be displayed in a window or sent as an email.
+**Problem**: You want to turn a string full of miscellaneous whitespace into a string formatted with linebreaks at appropriate intervals, so that the text can be displayed in a window or sent as an email.
 
-Solution:
+**Solution**:
 ```rb
 irb(main):001:0> puts wrap("This text is too short to be wrapped.", 20)
 This text is too
@@ -67,4 +59,16 @@ watching the rain run down nearby windows. How long has it
 been raining? The newspapers now print the total, but no one
 reads them anymore.
 => nil
+```
+
+### Recipe 2.18 Validating an Email Address
+
+**Problem**: You need to see whether an email address is valid.
+
+**Solution**:
+```rb
+irb(main):001:0> probably_valid? 'joe@example.com'
+=> true
+irb(main):002:0> probably_valid? 'joe@example'
+=> false
 ```
